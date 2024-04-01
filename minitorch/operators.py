@@ -154,12 +154,14 @@ def map(fn: Callable[[float], float]) -> Callable[[Iterable[float]], Iterable[fl
          new list
     """
     # TODO: Implement for Task 0.3.
+    return minitorch.operators.map(fn)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
 def negList(ls: Iterable[float]) -> Iterable[float]:
     "Use `map` and `neg` to negate each element in `ls`"
     # TODO: Implement for Task 0.3.
+    return minitorch.operators.negList(ls)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
@@ -180,12 +182,14 @@ def zipWith(
 
     """
     # TODO: Implement for Task 0.3.
+    return minitorch.operators.zipWith(fn)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
 def addLists(ls1: Iterable[float], ls2: Iterable[float]) -> Iterable[float]:
     "Add the elements of `ls1` and `ls2` using `zipWith` and `add`"
     # TODO: Implement for Task 0.3.
+    
     raise NotImplementedError("Need to implement for Task 0.3")
 
 

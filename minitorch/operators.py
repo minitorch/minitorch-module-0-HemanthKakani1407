@@ -4,7 +4,7 @@ Collection of the core mathematical operators used throughout the code base.
 
 import math
 from typing import Callable, Iterable
-import minitorch
+
 # ## Task 0.1
 #
 # Implementation of a prelude of elementary functions.
@@ -13,56 +13,56 @@ import minitorch
 def mul(x: float, y: float) -> float:
     "$f(x, y) = x * y$"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.mul(x, y)
+    return mul(x, y)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def id(x: float) -> float:
     "$f(x) = x$"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.id(x)
+    return id(x)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def add(x: float, y: float) -> float:
     "$f(x, y) = x + y$"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.add(x, y)
+    return add(x, y)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def neg(x: float) -> float:
     "$f(x) = -x$"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.neg(x)
+    return neg(x)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def lt(x: float, y: float) -> float:
     "$f(x) =$ 1.0 if x is less than y else 0.0"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.lt(x, y)
+    return lt(x, y)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def eq(x: float, y: float) -> float:
     "$f(x) =$ 1.0 if x is equal to y else 0.0"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.eq(x, y)
+    return eq(x, y)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def max(x: float, y: float) -> float:
     "$f(x) =$ x if x is greater than y else y"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.max(x, y)
+    return max(x, y)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def is_close(x: float, y: float) -> float:
     "$f(x) = |x - y| < 1e-2$"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.is_close(x, y)
+    return is_close(x, y)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
@@ -79,7 +79,7 @@ def sigmoid(x: float) -> float:
     for stability.
     """
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.sigmoid(x)
+    return sigmoid(x)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
@@ -90,7 +90,7 @@ def relu(x: float) -> float:
     (See https://en.wikipedia.org/wiki/Rectifier_(neural_networks) .)
     """
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.relu(x)
+    return relu(x)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
@@ -110,28 +110,28 @@ def exp(x: float) -> float:
 def log_back(x: float, d: float) -> float:
     r"If $f = log$ as above, compute $d \times f'(x)$"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.log_back(x, d)
+    return log_back(x, d)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def inv(x: float) -> float:
     "$f(x) = 1/x$"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.inv(x)
+    return inv(x)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def inv_back(x: float, d: float) -> float:
     r"If $f(x) = 1/x$ compute $d \times f'(x)$"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.inv_back(x, d)
+    return inv_back(x, d)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def relu_back(x: float, d: float) -> float:
     r"If $f = relu$ compute $d \times f'(x)$"
     # TODO: Implement for Task 0.1.
-    return minitorch.operators.relu_back(x, d)
+    return relu_back(x, d)
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
@@ -154,14 +154,14 @@ def map(fn: Callable[[float], float]) -> Callable[[Iterable[float]], Iterable[fl
          new list
     """
     # TODO: Implement for Task 0.3.
-    return minitorch.operators.map(fn)
+    return map(fn)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
 def negList(ls: Iterable[float]) -> Iterable[float]:
     "Use `map` and `neg` to negate each element in `ls`"
     # TODO: Implement for Task 0.3.
-    return minitorch.operators.negList(ls)
+    return negList(ls)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
@@ -182,14 +182,14 @@ def zipWith(
 
     """
     # TODO: Implement for Task 0.3.
-    return minitorch.operators.zipWith(fn)
+    return zipWith(fn)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
 def addLists(ls1: Iterable[float], ls2: Iterable[float]) -> Iterable[float]:
     "Add the elements of `ls1` and `ls2` using `zipWith` and `add`"
     # TODO: Implement for Task 0.3.
-    return minitorch.operators.addLists(ls1, ls2)
+    return addLists(ls1, ls2)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
@@ -209,19 +209,19 @@ def reduce(
          fn(x_1, x_0)))`
     """
     # TODO: Implement for Task 0.3.
-    return minitorch.operators.reduce(fn, start)
+    return reduce(fn, start)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
 def sum(ls: Iterable[float]) -> float:
     "Sum up a list using `reduce` and `add`."
     # TODO: Implement for Task 0.3.
-    return minitorch.operators.sum(ls)
+    return sum(ls)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
 def prod(ls: Iterable[float]) -> float:
     "Product of a list using `reduce` and `mul`."
     # TODO: Implement for Task 0.3.
-    return minitorch.operators.prod(ls)
+    return prod(ls)
     raise NotImplementedError("Need to implement for Task 0.3")

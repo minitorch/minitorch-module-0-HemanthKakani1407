@@ -189,7 +189,7 @@ def zipWith(
 def addLists(ls1: Iterable[float], ls2: Iterable[float]) -> Iterable[float]:
     "Add the elements of `ls1` and `ls2` using `zipWith` and `add`"
     # TODO: Implement for Task 0.3.
-    
+    return minitorch.operators.addLists(ls1, ls2)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
@@ -209,16 +209,19 @@ def reduce(
          fn(x_1, x_0)))`
     """
     # TODO: Implement for Task 0.3.
+    return minitorch.operators.reduce(fn, start)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
 def sum(ls: Iterable[float]) -> float:
     "Sum up a list using `reduce` and `add`."
     # TODO: Implement for Task 0.3.
+    return minitorch.operators.sum(ls)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 
 def prod(ls: Iterable[float]) -> float:
     "Product of a list using `reduce` and `mul`."
     # TODO: Implement for Task 0.3.
+    return minitorch.operators.prod(ls)
     raise NotImplementedError("Need to implement for Task 0.3")

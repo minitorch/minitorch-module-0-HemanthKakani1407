@@ -108,6 +108,10 @@ def test_sigmoid(a: float) -> None:
     * It is  strictly increasing.
     """
     # TODO: Implement for Task 0.2.
+    assert 0.0 <= operators.sigmoid(a) <= 1.0
+    assert operators.sigmoid(-a) == 1 - operators.sigmoid(a)
+    assert operators.sigmoid(0) == 0.5
+    assert operators.sigmoid(a) < operators.sigmoid(a + 1)
     raise NotImplementedError("Need to implement for Task 0.2")
 
 
@@ -116,6 +120,7 @@ def test_sigmoid(a: float) -> None:
 def test_transitive(a: float, b: float, c: float) -> None:
     "Test the transitive property of less-than (a < b and b < c implies a < c)"
     # TODO: Implement for Task 0.2.
+    assert (operators.lt(a,b) and operators.lt(b, c)) == operators.lt(a,c)
     raise NotImplementedError("Need to implement for Task 0.2")
 
 
@@ -126,6 +131,9 @@ def test_symmetric() -> None:
     gives the same value regardless of the order of its input.
     """
     # TODO: Implement for Task 0.2.
+    a = 2.0
+    b = 3.0
+    assert operators.mul(a, b) == operators.mul(b, a)
     raise NotImplementedError("Need to implement for Task 0.2")
 
 
@@ -136,6 +144,8 @@ def test_distribute() -> None:
     :math:`z \times (x + y) = z \times x + z \times y`
     """
     # TODO: Implement for Task 0.2.
+    x, y, z = 2.0, 3.0, 4.0
+    assert_close(z * (x + y), z * x + z * y)
     raise NotImplementedError("Need to implement for Task 0.2")
 
 
@@ -145,6 +155,8 @@ def test_other() -> None:
     Write a test that ensures some other property holds for your functions.
     """
     # TODO: Implement for Task 0.2.
+    a, b, c = 2.0, 3.0, 4.0
+    assert (a + b) + c == a + (b + c)
     raise NotImplementedError("Need to implement for Task 0.2")
 
 
@@ -174,10 +186,10 @@ def test_sum_distribute(ls1: List[float], ls2: List[float]) -> None:
     is the same as the sum of each element of `ls1` plus each element of `ls2`.
     """
     # TODO: Implement for Task 0.3.
-    sum_of_ls1 = operators.sum(ls1)
-    sum_of_ls2 = operators.sum(ls2)
-    sum_of_both = operators.sum([x + y for x, y in zip(ls1, ls2)])
-    assert sum_of_ls1 + sum_of_ls2 == sum_of_both
+    sum_of_ls1 = sum(ls1)
+    sum_of_ls2 = sum(ls2)
+    sum_of_both = sum([x + y for x, y in zip(ls1, ls2)])
+    assert_close(sum_of_ls1 + sum_of_ls2, sum_of_both)
     raise NotImplementedError("Need to implement for Task 0.3")
 
 

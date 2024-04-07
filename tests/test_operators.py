@@ -112,7 +112,7 @@ def test_sigmoid(a: float) -> None:
     assert operators.sigmoid(-a) == 1 - operators.sigmoid(a)
     assert operators.sigmoid(0) == 0.5
     assert operators.sigmoid(a) < operators.sigmoid(a + 1)
-    raise NotImplementedError("Need to implement for Task 0.2")
+    
 
 
 @pytest.mark.task0_2
@@ -120,7 +120,7 @@ def test_sigmoid(a: float) -> None:
 def test_transitive(a: float, b: float, c: float) -> None:
     "Test the transitive property of less-than (a < b and b < c implies a < c)"
     # TODO: Implement for Task 0.2.
-    assert (operators.lt(a,b) and operators.lt(b, c)) == operators.lt(a, c)
+    assert (operators.lt(a, b) and operators.lt(b, c)) == pytest.approx(operators.lt(a, c))
     raise NotImplementedError("Need to implement for Task 0.2")
 
 

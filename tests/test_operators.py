@@ -120,7 +120,10 @@ def test_sigmoid(a: float) -> None:
 def test_transitive(a: float, b: float, c: float) -> None:
     "Test the transitive property of less-than (a < b and b < c implies a < c)"
     # TODO: Implement for Task 0.2.
-    assert (operators.lt(a, b) and operators.lt(b, c)) == pytest.approx(operators.lt(a, c))
+    if a < b and b < c:
+        assert operators.lt(a, c) == pytest.approx(1.0)
+    else:
+        assert operators.lt(a, c) == pytest.approx(0.0)
     
 
 

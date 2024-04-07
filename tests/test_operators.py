@@ -120,7 +120,7 @@ def test_sigmoid(a: float) -> None:
 def test_transitive(a: float, b: float, c: float) -> None:
     "Test the transitive property of less-than (a < b and b < c implies a < c)"
     # TODO: Implement for Task 0.2.
-    assert (operators.lt(a,b) and operators.lt(b, c)) == operators.lt(a,c)
+    assert (operators.lt(a,b) and operators.lt(b, c)) == operators.lt(a, c)
     raise NotImplementedError("Need to implement for Task 0.2")
 
 
@@ -145,7 +145,7 @@ def test_distribute() -> None:
     """
     # TODO: Implement for Task 0.2.
     x, y, z = 2.0, 3.0, 4.0
-    assert_close(z * (x + y), z * x + z * y)
+    assert operators.mul(z, operators.add(x, y)) == operators.add(operators.mul(z, x), operators.mul(z, y))
     raise NotImplementedError("Need to implement for Task 0.2")
 
 

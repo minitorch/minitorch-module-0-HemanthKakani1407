@@ -13,56 +13,56 @@ from typing import Callable, Iterable
 def mul(x: float, y: float) -> float:
     "$f(x, y) = x * y$"
     # TODO: Implement for Task 0.1.
-    return mul(x, y)
+    return x * y
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def id(x: float) -> float:
     "$f(x) = x$"
     # TODO: Implement for Task 0.1.
-    return id(x)
+    return x
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def add(x: float, y: float) -> float:
     "$f(x, y) = x + y$"
     # TODO: Implement for Task 0.1.
-    return add(x, y)
+    return x + y
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def neg(x: float) -> float:
     "$f(x) = -x$"
     # TODO: Implement for Task 0.1.
-    return neg(x)
+    return -x
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def lt(x: float, y: float) -> float:
     "$f(x) =$ 1.0 if x is less than y else 0.0"
     # TODO: Implement for Task 0.1.
-    return lt(x, y)
+    return x < y
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def eq(x: float, y: float) -> float:
     "$f(x) =$ 1.0 if x is equal to y else 0.0"
     # TODO: Implement for Task 0.1.
-    return eq(x, y)
+    return x == y
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def max(x: float, y: float) -> float:
     "$f(x) =$ x if x is greater than y else y"
     # TODO: Implement for Task 0.1.
-    return max(x, y)
+    return x if x > y else y
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
 def is_close(x: float, y: float) -> float:
     "$f(x) = |x - y| < 1e-2$"
     # TODO: Implement for Task 0.1.
-    return is_close(x, y)
+    return abs(x - y) < 1e-2
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
@@ -79,7 +79,7 @@ def sigmoid(x: float) -> float:
     for stability.
     """
     # TODO: Implement for Task 0.1.
-    return sigmoid(x)
+    return 1.0 / (1.0 + math.exp(-x)) if x >= 0 else math.exp(x) / (1.0 +  math.exp(x))
     raise NotImplementedError("Need to implement for Task 0.1")
 
 
@@ -90,7 +90,7 @@ def relu(x: float) -> float:
     (See https://en.wikipedia.org/wiki/Rectifier_(neural_networks) .)
     """
     # TODO: Implement for Task 0.1.
-    return relu(x)
+    return x if x > 0 else 0
     raise NotImplementedError("Need to implement for Task 0.1")
 
 

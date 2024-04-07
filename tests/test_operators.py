@@ -189,8 +189,8 @@ def test_sum_distribute(ls1: List[float], ls2: List[float]) -> None:
     sum_of_ls1 = sum(ls1)
     sum_of_ls2 = sum(ls2)
     sum_of_both = sum([x + y for x, y in zip(ls1, ls2)])
-    assert_close(sum_of_ls1 + sum_of_ls2, sum_of_both)
-    
+    assert sum_of_ls1 + sum_of_ls2, sum_of_both
+
 
 
 @pytest.mark.task0_3

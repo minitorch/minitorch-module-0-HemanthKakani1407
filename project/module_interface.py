@@ -4,8 +4,11 @@ from streamlit_ace import st_ace
 
 import minitorch
 
-MyModule = None
-minitorch
+class MyModule(minitorch.Module):
+    def __init__(self):
+        super().__init__()
+        self.parameter1 = minitorch.Parameter(15)
+
 
 
 def render_module_sandbox():
@@ -25,7 +28,7 @@ class MyModule(minitorch.Module):
         self.parameter1 = minitorch.Parameter(15)
 """,
     )
-    out = exec(code, globals())
+    exec(code, globals())
     out = MyModule()
     st.write(dict(out.named_parameters()))
     G = nx.MultiDiGraph()
@@ -45,3 +48,4 @@ class MyModule(minitorch.Module):
 
     G.graph["graph"] = {"rankdir": "TB"}
     st.graphviz_chart(nx.nx_pydot.to_pydot(G).to_string())
+render_module_sandbox()

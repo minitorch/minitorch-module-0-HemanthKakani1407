@@ -174,7 +174,10 @@ def test_sum_distribute(ls1: List[float], ls2: List[float]) -> None:
     is the same as the sum of each element of `ls1` plus each element of `ls2`.
     """
     # TODO: Implement for Task 0.3.
-    assert operators.sum(ls1) + operators.sum(ls2) == operators.sum([x + y for x, y in zip(ls1, ls2)])
+    sum_of_ls1 = operators.sum(ls1)
+    sum_of_ls2 = operators.sum(ls2)
+    sum_of_both = operators.sum([x + y for x, y in zip(ls1, ls2)])
+    assert sum_of_ls1 + sum_of_ls2 == sum_of_both
     raise NotImplementedError("Need to implement for Task 0.3")
 
 

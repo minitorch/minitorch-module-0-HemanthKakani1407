@@ -112,7 +112,7 @@ def test_sigmoid(a: float) -> None:
     assert operators.sigmoid(-a) == 1 - operators.sigmoid(a)
     assert operators.sigmoid(0) == 0.5
     assert operators.sigmoid(a) < operators.sigmoid(a + 1)
-    
+    raise NotImplementedError("Need to implement for Task 0.2")
 
 
 @pytest.mark.task0_2
@@ -121,7 +121,7 @@ def test_transitive(a: float, b: float, c: float) -> None:
     "Test the transitive property of less-than (a < b and b < c implies a < c)"
     # TODO: Implement for Task 0.2.
     assert (operators.lt(a,b) and operators.lt(b, c)) == operators.lt(a, c)
-    
+    raise NotImplementedError("Need to implement for Task 0.2")
 
 
 @pytest.mark.task0_2
@@ -189,7 +189,7 @@ def test_sum_distribute(ls1: List[float], ls2: List[float]) -> None:
     sum_of_ls1 = sum(ls1)
     sum_of_ls2 = sum(ls2)
     sum_of_both = sum([x + y for x, y in zip(ls1, ls2)])
-    assert sum_of_ls1 + sum_of_ls2, sum_of_both
+    assert (sum_of_ls1 + sum_of_ls2, sum_of_both)
 
 
 

@@ -112,7 +112,7 @@ def test_sigmoid(a: float) -> None:
     assert operators.sigmoid(-a) == 1 - operators.sigmoid(a)
     assert operators.sigmoid(0) == 0.5
     assert operators.sigmoid(a) < operators.sigmoid(a + 1)
-    raise NotImplementedError("Need to implement for Task 0.2")
+    
 
 
 @pytest.mark.task0_2
@@ -121,7 +121,7 @@ def test_transitive(a: float, b: float, c: float) -> None:
     "Test the transitive property of less-than (a < b and b < c implies a < c)"
     # TODO: Implement for Task 0.2.
     assert (operators.lt(a,b) and operators.lt(b, c)) == operators.lt(a, c)
-    raise NotImplementedError("Need to implement for Task 0.2")
+    
 
 
 @pytest.mark.task0_2
@@ -134,7 +134,7 @@ def test_symmetric() -> None:
     a = 2.0
     b = 3.0
     assert operators.mul(a, b) == operators.mul(b, a)
-    raise NotImplementedError("Need to implement for Task 0.2")
+    
 
 
 @pytest.mark.task0_2
@@ -146,7 +146,7 @@ def test_distribute() -> None:
     # TODO: Implement for Task 0.2.
     x, y, z = 2.0, 3.0, 4.0
     assert operators.mul(z, operators.add(x, y)) == operators.add(operators.mul(z, x), operators.mul(z, y))
-    raise NotImplementedError("Need to implement for Task 0.2")
+    
 
 
 @pytest.mark.task0_2
@@ -157,7 +157,7 @@ def test_other() -> None:
     # TODO: Implement for Task 0.2.
     a, b, c = 2.0, 3.0, 4.0
     assert (a + b) + c == a + (b + c)
-    raise NotImplementedError("Need to implement for Task 0.2")
+    
 
 
 # ## Task 0.3  - Higher-order functions

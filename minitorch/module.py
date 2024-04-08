@@ -55,7 +55,7 @@ class Module:
         """
         # TODO: Implement for Task 0.4.
         params = []
-        for param, name in self._parameters().items():
+        for param, name in self._parameters.items():
             params.append((param, name))
         for name_mod, module in self._modules.items():
             for param, name in module._parameters.items():

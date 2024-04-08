@@ -62,14 +62,14 @@ class Module:
         return params
         
 
-    def parameters(self) -> Sequence[Parameter]:
+    def parameters(self) -> Dict[str, Parameter]:
         "Enumerate over all the parameters of this module and its descendents."
         # TODO: Implement for Task 0.4.
-        params = []
-        for param in self._parameters.values():
-            params.append(param)
+        params = {}
+        for name, param in self._parameters.items():
+            params[name] = param
         for module in self.modules():
-            params.extend(module.parameters())
+            params.update(module.parameters())
         return params
         
 

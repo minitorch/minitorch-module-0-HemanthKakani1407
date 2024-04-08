@@ -33,7 +33,7 @@ class Module:
         "Set the mode of this module and all descendent modules to `train`."
         # TODO: Implement for Task 0.4.
         self.training = True
-        for module in self.modules():
+        for module in [self] + self.modules():
             module.train()
         
 
@@ -41,7 +41,7 @@ class Module:
         "Set the mode of this module and all descendent modules to `eval`."
         # TODO: Implement for Task 0.4.
         self.training = False
-        for module in self.modules():
+        for module in [self] + self.modules():
             module.eval()
         
 
@@ -55,22 +55,22 @@ class Module:
         """
         # TODO: Implement for Task 0.4.
         params = []
-        for name, param in self.parameters().items():
-            params.append((name, param))
-        for module in self.modules():
-            params.extend(module.named_parameters())
-        return params
+        for param, name in self.parameters().items():
+            params.append((param, name))
+        for name_mod, module in self._modules.items():
+            for param, name in module._parameters.items():
+                params.append((f'{name_mod}.'+param, name))
+        parameters: Sequence[Tuple[str, Param]] = params
+        return parameters
         
 
-    def parameters(self) -> Dict[str, Parameter]:
+    def parameters(self) -> Sequence[Parameter]:
         "Enumerate over all the parameters of this module and its descendents."
         # TODO: Implement for Task 0.4.
-        params = {}
-        for name, param in self._parameters.items():
-            params[name] = param
-        for module in self.modules():
-            params.update(module.parameters())
-        return params
+        params = []
+        for module in [self] + self.modules():
+            for name in module._parameters.values():
+                params.append(name)
         
 
     def add_parameter(self, k: str, v: Any) -> Parameter:

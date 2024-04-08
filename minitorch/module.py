@@ -71,6 +71,7 @@ class Module:
         for module in [self] + self.modules():
             for name in module._parameters.values():
                 params.append(name)
+        return params
         
 
     def add_parameter(self, k: str, v: Any) -> Parameter:

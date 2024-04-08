@@ -55,7 +55,7 @@ class Module:
         """
         # TODO: Implement for Task 0.4.
         params = []
-        for name, param in self.parameters.items():
+        for name, param in self.parameters().items():
             params.append((name, param))
         for module in self.modules():
             params.extend(module.named_parameters())
@@ -71,7 +71,7 @@ class Module:
         for module in self.modules():
             params.extend(module.parameters())
         return params
-        raise NotImplementedError("Need to implement for Task 0.4")
+        
 
     def add_parameter(self, k: str, v: Any) -> Parameter:
         """

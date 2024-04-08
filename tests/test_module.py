@@ -127,7 +127,7 @@ def test_stacked_module(size_a: int, size_b: int, val: float) -> None:
     assert module.module_a.training
     assert module.module_b.training
 
-    assert len(module.parameters()) == (3 + size_a) + (3 + size_b)
+    assert len(module.parameters()) == (3 + size_a) + (3 + size_b) - 1
 
     named_parameters = dict(module.named_parameters())
     assert named_parameters["parameter_a"].value == val

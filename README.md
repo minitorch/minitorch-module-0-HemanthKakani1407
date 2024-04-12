@@ -6,3 +6,4 @@
 * Docs: https://minitorch.github.io/
 
 * Overview: https://minitorch.github.io/module0.html
+![image](https://github.com/minitorch/minitorch-module-0-HemanthKakani1407/assets/125701371/404d702f-24cb-46d4-b0b7-38b4b316b944)
